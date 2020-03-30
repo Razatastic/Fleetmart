@@ -2,8 +2,7 @@ from flask import Flask, jsonify, request
 from flask_cors import CORS
 from flask_migrate import Migrate
 
-
-from core import db, getAppKey, getDBCredentials
+from core import db, getAppKey, getDBCredentials, seedCategories, getAllCategories
 
 DEBUG = True
 
@@ -27,6 +26,10 @@ app.app_context().push()
 db.init_app(app)
 migrate = Migrate(app, db)
 
+seed = False
+if seed:
+    seedCategories()
+
 
 @app.route('/', methods=['GET'])
 def homeRoute():
@@ -36,3 +39,10 @@ def homeRoute():
 def testRoute():
     testData = {'A': 1, 'B': 2, 'C': 3 }
     return jsonify(testData)
+
+
+@app.route('/categories', methods=['GET'])
+def getCategories():
+    categories = getAllCategories()
+    print(f"categories: {categories}")
+    return jsonify(categories)
