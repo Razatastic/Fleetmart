@@ -2,7 +2,6 @@ from flask_sqlalchemy import SQLAlchemy
 
 db = SQLAlchemy()
 
-
 class User(db.Model):
     id = db.Column(db.BigInteger, primary_key=True)
     first_name = db.Column(db.String(75), unique=False, nullable=False)
@@ -10,8 +9,8 @@ class User(db.Model):
     email = db.Column(db.String(100), unique=True, nullable=False)
     password = db.Column(db.Text, nullable=False)
     is_vendor = db.Column(db.Boolean, nullable=False)
-    address = db.relationship('address', backref='user', lazy=True)
-    vendor = db.relationship('vendor', backref='user', lazy=True)
+    address = db.relationship('Address', backref='user', lazy=True)
+    vendor = db.relationship('Vendor', backref='user', lazy=True)
 
     def __init__(self, first_name, last_name, email, password, is_vendor):
         self.first_name = first_name
@@ -54,24 +53,36 @@ class Vendor(db.Model):
         self.name = name
         self.user_id = user_id
 
+    def __repr__(self):
+        return '<Vendor %r>' % self.name
+
 
 class Product(db.Model):
     id = db.Column(db.BigInteger, primary_key=True)
     name = db.Column(db.String(100), unique=False, nullable=False)
-    category_id = db.relationship('Category', backref='category', lazy=True)
+    price = db.Column(db.Float, nullable=False)
+    category_id = db.Column(db.BigInteger, db.ForeignKey('category.id'), nullable=False)
     vendor_id = db.Column(db.BigInteger, db.ForeignKey('vendor.id'), nullable=False)
 
-    def __init__(self, name, category_id, vendor_id):
+    def __init__(self, name, price, category_id, vendor_id):
         self.name = name
+        self.price = price,
         self.category_id = category_id
         self.vendor_id = vendor_id
+
+    def __repr__(self):
+        return '<Product %r>' % self.name
 
 
 class Category(db.Model):
     id = db.Column(db.BigInteger, primary_key=True)
     name = db.Column(db.String(75), unique=True)
-    product_id = db.Column(db.BigInteger, db.ForeignKey('product.id'), nullable=False)
+    description = db.Column(db.String(75), unique=True)
+    products = db.relationship('Product', backref='category', lazy=True)
 
-    def __init__(self, name, product_id):
+    def __init__(self, name, description):
         self.name = name
-        self.product_id = product_id
+        self.description = description
+
+    def __repr__(self):
+        return '<Category %r>' % self.name
