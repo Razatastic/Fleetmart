@@ -5,6 +5,7 @@ import { Navbar } from './components/layout';
 import { SignIn, SignUp } from './components/auth';
 import { Home } from './pages';
 import CssBaseline from '@material-ui/core/CssBaseline';
+import ItemList from './components/layout/ItemList';
 
 function App() {
   return (
@@ -25,6 +26,9 @@ function App() {
             </Route>
             <Route path="/signup">
               <SignUp />
+            </Route>
+            <Route exact path="/item:id">
+              <ItemList />
             </Route>
           </Switch>
         </div>
