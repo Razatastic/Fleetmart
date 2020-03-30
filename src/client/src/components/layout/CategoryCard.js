@@ -6,9 +6,6 @@ import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 
 const useStyles = makeStyles({
-  // root: {
-  //   maxWidth: 345
-  // },
   media: {
     height: 200
   },
@@ -21,15 +18,15 @@ const useStyles = makeStyles({
 });
 
 export default function CategoryCard(props) {
-  const { img } = props;
+  const { id, name, img } = props;
   const classes = useStyles();
 
   return (
-    <Card className={classes.root}>
+    <Card key={id} className={classes.root}>
       <CardMedia className={classes.media} image={img} title="Grocery Store">
         <Container className={classes.container}>
-          <Typography variant="h2" style={{ color: 'white' }}>
-            h2. Heading
+          <Typography variant="h4" style={{ color: 'white' }}>
+            {name}
           </Typography>
         </Container>
       </CardMedia>
