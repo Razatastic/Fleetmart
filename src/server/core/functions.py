@@ -15,7 +15,7 @@ def getAppKey(path):
 
 def getAllCategories():
     catQuery = Category.query.all()
-    categories = [{ 'id': c.id, 'name': c.name, 'description': c.description } for c in catQuery ]
+    categories = [{ 'id': c.id, 'name': c.name, 'description': c.description, 'image': c.image} for c in catQuery ]
     return categories
 
 
