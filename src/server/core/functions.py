@@ -22,10 +22,9 @@ def getAllCategories():
 def seedCategories():
     with open('/home/adempus/Projects/BCHackathon/Fleetmart/src/server/seeds/categories.json', 'r') as jsonFile:
         data = json.load(jsonFile)
-        for k in data.items():
-            name, desc = k[0], k[1]
-            print(f'data: {name}: {desc}')
-            newCategory = Category(name, desc)
+        for i in data:
+            # print(f"item: {i}")
+            newCategory = Category(i['name'], i['description'], i['image'])
             db.session.add(newCategory)
             db.session.commit()
 

@@ -78,11 +78,13 @@ class Category(db.Model):
     id = db.Column(db.BigInteger, primary_key=True)
     name = db.Column(db.String(75), unique=True)
     description = db.Column(db.String(75), unique=True)
+    image = db.Column(db.String(200), unique=True)
     products = db.relationship('Product', backref='category', lazy=True)
 
-    def __init__(self, name, description):
+    def __init__(self, name, description, image):
         self.name = name
         self.description = description
+        self.image = image
 
     def __repr__(self):
         return '<Category %r>' % self.name

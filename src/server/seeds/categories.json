@@ -1,14 +1,14 @@
-{
-  "Beverages":"coffee/tea, juice, soda",
-  "Bread/Bakery": "sandwich loaves, dinner rolls, tortillas, bagels",
-  "Canned/Jarred Goods":" vegetables, spaghetti sauce, ketchup",
-  "Dairy":"cheeses, eggs, milk, yogurt, butter",
-  "Dry/Baking Goods":"cereals, flour, sugar, pasta, mixes",
-  "Frozen Foods": "waffles, vegetables, individual meals, ice cream",
-  "Meat":"lunch meat, poultry, beef, pork",
-  "Produce":"fruits, vegetables",
-  "Cleaners":"all: purpose, laundry detergent, dishwashing liquid/detergent",
-  "Paper Goods":"paper towels, toilet paper, aluminum foil, sandwich bags",
-  "Personal Care": "shampoo, soap, hand soap, shaving cream",
-  "Other":"baby items, pet items, batteries, greeting cards"
-}
+[
+  {"name": "Beverages", "description": "coffee/tea, juice, soda", "image": "https://fleetmart-imgs.s3.us-east-2.amazonaws.com/images/beverages.jpeg"},
+  {"name": "Bread/Bakery", "description": "sandwich loaves, dinner rolls, tortillas, bagels", "image": "https://fleetmart-imgs.s3.us-east-2.amazonaws.com/images/bakery.jpeg"},
+  {"name": "Canned/Jarred Goods", "description": " vegetables, spaghetti sauce, ketchup", "image": "https://fleetmart-imgs.s3.us-east-2.amazonaws.com/images/cannedjarred.jpeg"},
+  {"name": "Dairy", "description": "cheeses, eggs, milk, yogurt, butter", "image": "https://fleetmart-imgs.s3.us-east-2.amazonaws.com/images/diary.jpeg"},
+  {"name": "Dry/Baking Goods", "description": "cereals, flour, sugar, pasta, mixes", "image": "https://fleetmart-imgs.s3.us-east-2.amazonaws.com/images/baking_goods.jpeg"},
+  {"name": "Frozen Foods", "description": "waffles, vegetables, individual meals, ice cream", "image": "https://fleetmart-imgs.s3.us-east-2.amazonaws.com/images/frozen_foods.jpeg"},
+  {"name": "Meat", "description": "lunch meat, poultry, beef, pork", "image": "https://fleetmart-imgs.s3.us-east-2.amazonaws.com/images/meats.jpeg"},
+  {"name": "Produce", "description": "fruits, vegetables", "image": "https://fleetmart-imgs.s3.us-east-2.amazonaws.com/images/produce.jpeg"},
+  {"name": "Cleaners", "description": "all: purpose, laundry detergent, dishwashing liquid/detergent", "image": "https://fleetmart-imgs.s3.us-east-2.amazonaws.com/images/cleaners.jpeg"},
+  {"name": "Paper Goods", "description": "paper towels, toilet paper, aluminum foil, sandwich bags", "image": "https://fleetmart-imgs.s3.us-east-2.amazonaws.com/images/paper_goods.jpeg"},
+  {"name": "Personal Care", "description": "shampoo, soap, hand soap, shaving cream", "image": "https://fleetmart-imgs.s3.us-east-2.amazonaws.com/images/personal_care.jpeg"},
+  {"name": "Other", "description": "baby items, pet items, batteries, greeting cards", "image": "https://fleetmart-imgs.s3.us-east-2.amazonaws.com/images/other.jpeg"}
+]
