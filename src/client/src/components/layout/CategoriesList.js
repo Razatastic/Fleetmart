@@ -19,7 +19,8 @@ export default function CategoriesList() {
       {categoryList.map(category => (
         <Grid item xs={6}>
           <Link
-            to={category.name.replace(/\\|\/|\s/g, '').toLowerCase()}
+            // to={category.name.replace(/\\|\/|\s/g, '').toLowerCase()}
+            to={`item:${category.id}`}
             style={{ textDecoration: 'none' }}
           >
             <CategoryCard
