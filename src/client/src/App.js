@@ -2,7 +2,8 @@ import React from 'react';
 import './styles/App.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { Navbar } from './components/layout';
-import { Home, Login } from './pages';
+import { SignIn, SignUp } from './components/auth';
+import { Home } from './pages';
 import CssBaseline from '@material-ui/core/CssBaseline';
 
 function App() {
@@ -19,8 +20,11 @@ function App() {
             <Route exact path="/">
               <Home />
             </Route>
-            <Route path="/login">
-              <Login />
+            <Route path="/signin">
+              <SignIn />
+            </Route>
+            <Route path="/signup">
+              <SignUp />
             </Route>
           </Switch>
         </div>
