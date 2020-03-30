@@ -1,25 +1,44 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-// import SignedInLinks from './SignedInLinks';
-// import SignedOutLinks from './SignedOutLinks';
+import { makeStyles } from '@material-ui/core/styles';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
+import { Link } from 'react-router-dom';
+
+const useStyles = makeStyles(theme => ({
+  root: {
+    flexGrow: 1
+  },
+  menuButton: {
+    marginRight: theme.spacing(2)
+  },
+  title: {
+    flexGrow: 1
+  }
+}));
 
 export default function Navbar() {
+  const classes = useStyles();
+
   return (
-    <div>
-      <Button variant="contained" color="primary">
-        Hello World
-      </Button>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/login">Login</Link>
-          </li>
-        </ul>
-      </nav>
+    <div className={classes.root}>
+      <AppBar
+        position="static"
+        color="transparent"
+        style={{ boxShadow: 'none' }}
+      >
+        <Toolbar>
+          <Typography variant="h6" className={classes.title}>
+            <Link to="/" style={{ color: 'black', textDecoration: 'none' }}>
+              Fleetmart
+            </Link>
+          </Typography>
+          <Link to="signin">
+            <Button>Login</Button>
+          </Link>
+        </Toolbar>
+      </AppBar>
     </div>
   );
 }
