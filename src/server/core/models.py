@@ -27,9 +27,9 @@ class Address(db.Model):
     id = db.Column(db.BigInteger, primary_key=True)
     street_name = db.Column(db.String(75), unique=False, nullable=False)
     city = db.Column(db.String(70), unique=False, nullable=False)
-    state = db.Column(db.String(70), unique=True, nullable=False)
-    zip_code = db.Column(db.String(70), unique=True, nullable=False)
-    apt = db.Column(db.String(10), unique=False, nullable=False)
+    state = db.Column(db.String(70), unique=False, nullable=False)
+    zip_code = db.Column(db.String(70), unique=False, nullable=False)
+    apt = db.Column(db.String(10), unique=False, nullable=True)
     user_id = db.Column(db.BigInteger, db.ForeignKey('user.id'), nullable=False)
 
     def __init__(self, street_name, city, state, zip_code, apt, user_id):
